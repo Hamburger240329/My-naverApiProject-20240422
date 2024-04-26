@@ -54,7 +54,7 @@ class MainWindow(QMainWindow, form_class):
 
         for i, news in enumerate(newsResult):  # i -> 0 ~ 9
             newsTitle = news['title']  # 뉴스 제목
-            # newsTitle - newsTitle.replace('&uot',''),replace(';',''),replace('<b>','')
+            newsTitle = newsTitle.replace('&quot','').replace(';','').replace('<b>','').replace('</b>','')
             newsLink = news['originallink']  # 뉴스의 오리지널 url 링크
             newsDate = news['pubDate']  # 뉴스 게시일
             newsDate = newsDate[0:25]
